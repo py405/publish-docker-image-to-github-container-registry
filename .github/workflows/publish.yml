@@ -9,8 +9,8 @@ jobs:
         uses: docker/login-action@v1
         with:
           registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: ${{ secrets.GIT_USER }}
+          password: ${{ secrets.GIT_TOKEN }}
       - name: Build the publish-hello-docker-image Docker image
         run: |
           docker build . --tag publish-hello-docker-image:latest
