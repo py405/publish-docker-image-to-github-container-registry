@@ -8,6 +8,6 @@ jobs:
       - name: Build the publish-hello-docker-image Docker image
         run: |
           docker login --username ${{ secrets.GIT_USER }} --password ${{ secrets.GIT_TOKEN }} ghcr.io
-          docker build . --tag publish-hello-docker-image:latest
-          docker run publish-hello-docker-image:latest
-          docker push publish-hello-docker-image:latest
+          docker build . --tag ghcr.io/py405/publish-hello-docker-image:latest
+          docker run ghcr.io/py405/publish-hello-docker-image:latest
+          docker push ghcr.io/py405/publish-hello-docker-image:latest
