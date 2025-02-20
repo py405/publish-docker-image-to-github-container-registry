@@ -5,7 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Login to GitHub Container Registry
       - name: Build the publish-hello-docker-image Docker image
         run: |
           docker login --username ${{ secrets.GIT_USER }} --password ${{ secrets.GIT_TOKEN }} ghcr.io
