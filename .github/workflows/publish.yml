@@ -5,9 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Build the publish-docker-image-to-github-container-registry Docker image
+      - name: Build the test Docker image
         run: |
           docker login --username ${{ secrets.GIT_USER }} --password ${{ secrets.GIT_TOKEN }} ghcr.io
-          docker build . --tag ghcr.io/py405/publish-docker-image-to-github-container-registry:latest
-          docker run ghcr.io/py405/publish-docker-image-to-github-container-registry:latest
-          docker push ghcr.io/py405/publish-docker-image-to-github-container-registry:latest
+          docker build . --tag ghcr.io/py405/test:latest
+          docker push ghcr.io/py405/test:latest
